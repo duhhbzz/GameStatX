@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameStatsX Web App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark-mode"> <!-- defaults to dark mode -->
+    <header>
+        <h1>GameStatsX Web App</h1>
+        <!-- TODO: replace text with sun/moon icons for better visual representation -->
+        <button id="theme-toggle">Toggle Theme</button>
+    </header>
+    <main>
+        <div id="user-input" style="display: none;">
+            <form id="stats-form">
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" placeholder="Enter a valid Epic Games Fortnite account name">
+                </div>
+                <button type="submit">Get Stats</button>
+            </form>
+        </div>
+        <!-- Mock data is shown by default for milestone 1 -->
+        <div id="user-stats">
+            <p>Username: <span id="display-username">duhhbzzᵗᵗᵛ</span> | BattlePass Level: <span id="battle-pass-level">65</span></p>
+            <div class="tabs">
+                <button class="tablink active" onclick="openTab('overall-stats')">Overall</button>
+                <button class="tablink" onclick="openTab('solo-stats')">Solo</button>
+                <button class="tablink" onclick="openTab('duo-stats')">Duo</button>
+                <button class="tablink" onclick="openTab('squad-stats')">Squads</button>
+            </div>
+            <div class="tabcontent" id="overall-stats">
+                <div class="stats-row">
+                    <div>Kills: 3656</div>
+                    <div>KD: 2.08</div>
+                </div>
+                <div class="stats-row">
+                    <div>Wins: 135</div>
+                    <div>Top 3: 326</div>
+                </div>
+                <div class="stats-row">
+                    <div>Top 5: 45</div>
+                    <div>Top 10: 527</div>
+                </div>
+                <div>Matches Played: 1894</div>
+                <div>Win Rate: 7%</div>
+                <div>Last Updated: 2024-08-04</div>
+            </div>
+            <div class="tabcontent" id="solo-stats" style="display: none;">
+                <div class="stats-row">
+                    <div>Wins: 50</div>
+                    <div>Kills: 1234</div>
+                    <div>KD: 1.89</div>
+                </div>
+                <div>Matches Played: 500</div>
+                <div>Win Rate: 10%</div>
+                <div>Last Updated: 2024-08-04</div>
+            </div>
+            <div class="tabcontent" id="duo-stats" style="display: none;">
+                <div class="stats-row">
+                    <div>Wins: 40</div>
+                    <div>Kills: 2345</div>
+                    <div>KD: 2.5</div>
+                </div>
+                <div>Matches Played: 600</div>
+                <div>Win Rate: 12%</div>
+                <div>Last Updated: 2024-08-04</div>
+            </div>
+            <div class="tabcontent" id="squad-stats" style="display: none;">
+                <div class="stats-row">
+                    <div>Wins: 45</div>
+                    <div>Kills: 2987</div>
+                    <div>KD: 3.0</div>
+                </div>
+                <div>Matches Played: 700</div>
+                <div>Win Rate: 15%</div>
+                <div>Last Updated: 2024-08-04</div>
+            </div>
+            <p style="color: red; font-size: 12px; text-align: center;">
+                Note: This data is mock and placeholder until the API functionality is implemented.
+            </p>
+        </div>
+    </main>
+    <footer>
+        <p>2024 GameStatsX | David Sweatt</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>
