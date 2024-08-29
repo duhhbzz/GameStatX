@@ -1,103 +1,144 @@
-/* General Styles */
+/* General Styling */
 body {
     font-family: Arial, sans-serif;
+    background-color: #1e1e1e;
+    color: #fff;
     margin: 0;
     padding: 0;
-    background-color: #121212; /* Default dark mode background */
-    color: #E0E0E0; /* Default dark mode text */
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: background-color 0.3s, color 0.3s;
+    justify-content: center;
+    height: 100vh;
+}
+
+body.light-mode {
+    background-color: #fff;
+    color: #000;
 }
 
 header {
-    background-color: #1F1F1F; /* Dark header background */
-    color: #E0E0E0;
-    padding: 10px 20px;
-    text-align: center;
     width: 100%;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: space-between;
-}
-
-#theme-toggle {
-    background-color: #444444;
-    color: #E0E0E0;
-    padding: 8px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-#theme-toggle:hover {
-    background-color: #555555;
-}
-
-main {
-    max-width: 500px;
-    width: 100%;
-    margin: 20px auto;
     padding: 20px;
-    background-color: #2C2C2C; /* Dark background for main content */
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    box-sizing: border-box;
-}
-
-/* Tab Styles */
-.tabs {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
-
-.tablink {
-    background-color: #444444;
-    color: #E0E0E0;
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    flex-grow: 1;
     text-align: center;
-}
-
-.tablink:not(:last-child) {
-    margin-right: 10px;
-}
-
-.tablink.active {
-    background-color: #666666;
-}
-
-/* Light Mode Overrides */
-body.light-mode {
-    background-color: #FFFFFF;
-    color: #000000;
+    background-color: #2b2b2b;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
 body.light-mode header {
-    background-color: #F0F0F0;
-    color: #000000;
+    background-color: #e0e0e0;
+}
+
+h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+#theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #444;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
 body.light-mode #theme-toggle {
-    background-color: #DDDDDD;
-    color: #000000;
+    background-color: #ddd;
+    color: #000;
 }
 
-body.light-mode main {
-    background-color: #FFFFFF;
-    color: #000000;
+/* Card Styling */
+.card {
+    background-color: #2b2b2b;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
+    width: 300px;
+    text-align: center;
+    margin-top: 120px;
 }
 
-body.light-mode .tablink {
-    background-color: #EEEEEE;
-    color: #000000;
+.centered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-body.light-mode .tablink.active {
-    background-color: #CCCCCC;
+form {
+    display: flex;
+    flex-direction: column;
 }
+
+input[type="text"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button[type="submit"], .new-search-button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #ff5722;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button[type="submit"]:hover, .new-search-button:hover {
+    background-color: #e64a19;
+}
+
+/* Tab Styling */
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.tabs button {
+    padding: 10px 20px;
+    margin: 0 5px;
+    border: none;
+    background-color: #444;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.tabs button:hover {
+    background-color: #555;
+}
+
+.tabs button.active {
+    background-color: #ff5722;
+}
+
+/* Tab Content */
+.tabcontent {
+    display: none;
+    text-align: left;
+}
+
+.tabcontent.active {
+    display: block;
+}
+
+/* Footer */
+footer {
+    position: fixed;
+    bottom: 10px;
+    text-align: center;
+    width: 100%;
+    color: #ccc;
+}
+
